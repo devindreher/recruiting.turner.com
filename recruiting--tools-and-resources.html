@@ -1,0 +1,302 @@
+<style>
+    
+    h2 {
+        font-family: TurnerBold;
+        font-size: 3rem;
+        margin-top: 30px;
+    }
+    
+    .r-button {
+        padding: 2px 5px;
+        border: 1px solid #0052e7;
+        border-radius: 3px;
+        
+        text-decoration: none;
+        font-size: .975rem !important;
+        font-family: TurnerBold, Arial, Helvetica, sans-serif;
+    }
+    
+    .r-button:hover {
+        background-color: #0052e7;
+        color: #fff;
+    }
+    
+/*FLEX BOXES*/
+    
+    .tool-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+    }
+
+    .tool-grid a {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 100%;
+      border: 1px solid dimgrey;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #000;
+      padding: .5em;
+      margin: .5em;
+    }
+
+    .tool-grid a:hover {
+      box-shadow: 3px 3px 5px #888;
+      transition: .3s;
+    }
+
+    .tool-grid-cell {
+      display: flex;
+      flex: 1 1 100%;
+      padding: 0 10px 0 0;
+      color: #000;
+      margin-right: 5rem;
+    }
+    
+    .tool-grid-cell img {
+        align-self:center;
+        max-width: 32px;
+        max-height: auto;
+        margin-right: 2px;
+    }
+    
+    .tool-grid-cell span {
+        line-height: 32px;
+        font-family: TurnerBold;
+        font-size: 1rem;
+    }
+
+    
+/*NAVIGATION*/
+
+    .learnNow a {
+        font-size: 15px;
+        font-family: TurnerBold;
+        color: #000;
+    }
+    
+    .learnNow a:hover {color: #0052e7;}
+
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 15px !important;
+      font-family: TurnerBold;
+    }
+
+    .topnav a:hover {
+      background-color: #0052e7;
+      color: #fff;
+    }
+
+    .topnav .icon {display: none;}
+    
+/*MEDIA QUERIES*/
+
+    @media screen and (max-width: 1152px) {
+        .topnav a:not(:first-child) {display: none;}
+        .topnav a.icon {
+        float: right;
+        display: block;
+        }
+    }
+
+    @media screen and (max-width: 1152px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+        }
+    }
+    
+    
+</style>
+
+<!--NAVIGATION-->
+
+<span class="learnNow"><a href="http://recruiting.turner.com">recruiting.turner.com</i></a></span>
+
+    <div class="topnav" id="myTopnav">
+      <a href="http://recruiting.turner.com">Home</a>    
+      <a href="/recruitingturnercom/recruiting--our-approach">Our Approach</a>
+      <a href="/recruitingturnercom/recruiting--process">Process</a>
+      <a href="/recruitingturnercom/recruiting--tools-and-resources">Tools &amp; Resources</a>
+      <a href="/recruitingturnercom/recruiting--student-programs">Student Programs</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="shrinkNav()">&#9776;</a>
+    </div>
+
+    <script>
+    function shrinkNav() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+    </script>
+
+<!--BODY-->
+
+<h2>Tools &amp; Resources</h2>
+
+<br>
+
+<h5>Page Navigation:</h5>
+<a href="#Open-Positions" class="r-button">Open Positions</a>
+<a href="#Kickoff-Meetings" class="r-button">Kick-Off Meetings</a>
+<a href="#Sourcing" class="r-button">Sourcing</a>
+<a href="#Interviewing" class="r-button">Interviewing</a>
+
+<hr>
+
+<!--OPEN POSITIONS-->
+
+<a name="Open-Positions"></a>
+<p><b>Open Positions</b></p>
+
+<div class="tool-grid">
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Budgeting-for-Positions_v1.pdf" target="_blank">
+    <div class="tool-grid-cell">
+        <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png"> 
+        <span>Budget Tips</span>
+    </div>
+    </a>      
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Creating-a-Position_v1.pdf" target="_blank">
+    <div class="tool-grid-cell">
+        <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png"> 
+        <span>Creating a Position</span>
+    </div>
+    </a>      
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Open-Positions_Creating-a-Job-Ad.pdf" target="_blank">
+    <div class="tool-grid-cell">
+        <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png"> 
+        <span>Making a Job Ad</span>
+    </div>
+    </a>      
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Completing-an-ePRF_v1.pdf" target="_blank">
+    <div class="tool-grid-cell">
+        <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png"> 
+        <span>Posting a Job</span>
+    </div>
+    </a>  
+</div>
+
+<br>
+<hr>
+<br>
+
+<a name="Kickoff-Meetings"></a>
+<p><b>Kickoff Meetings</b></p>
+
+<div class="tool-grid">
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/KICK-OFF-PROCESS.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/book-ico.png">
+            <span>Kickoff Process</span>
+        </div>
+    </a>    
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Recruiting-Service-Levels_v1.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/book-ico.png">
+            <span>Service Levels</span>
+        </div>
+    </a>
+</div>
+
+<br>
+<hr>
+<br>
+
+<a name="Sourcing"></a>
+<p><b>Sourcing</b></p>
+
+<div class="tool-grid">
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Approved+Direct+Hire+Vendors.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/book-ico.png">
+            <span>Agencies</span>
+        </div>
+    </a>    
+    <a href="/recruitingturnercom/recruiting--internal-candidates" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/book-ico.png">
+            <span>Internal Candidate Process</span>
+        </div>
+    </a>    
+    <a href="/recruitingturnercom/recruiting--passive-candidates" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/book-ico.png">
+            <span>Passive Candidate Process</span>
+        </div>
+    </a>    
+    <a href="https://turner.service-now.com/hrsp?id=kb_article&sys_id=4798b4e3137cba006b3d30128144b04d" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/book-ico.png">
+            <span>Referral Bonuses</span>
+        </div>
+    </a>    
+    <a href="https://turner.service-now.com/hrsp?id=kb_article&sys_id=4798b4e3137cba006b3d30128144b04d" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/book-ico.png">
+            <span>Sourcing Process</span>
+        </div>
+    </a>    
+    <a href="/recruitingturnercom/recruiting--where-we-source" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/book-ico.png">
+            <span>Where We Source</span>
+        </div>
+    </a>
+</div>
+
+<br>
+<hr>
+<br>
+
+<a name="Interviewing"></a>
+<p><b>Interviewing</b></p>
+
+<div class="tool-grid">
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Bold-Hiring-Interview-Guide.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png">
+            <span>Bold Hiring Toolkit</span>
+        </div>
+    </a>    
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Interviewing-Donts_v1.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png">
+            <span>Interviewing Don'ts</span>
+        </div>
+    </a>    
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Interview-Scheduling_v2.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/book-ico.png">
+            <span>Interview Scheduling</span>
+        </div>
+    </a>    
+    <a href="https://www.fastcompany.com/3036627/strong-female-lead/youre-more-biased-than-you-think" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/book-ico.png">
+            <span>Unconscious Bias</span>
+        </div>
+    </a>
+</div>

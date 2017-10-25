@@ -1,0 +1,477 @@
+<style>
+
+    h2 {
+        font-family: TurnerBold;
+        font-size: 3rem;
+        margin-top: 30px;
+    }
+    
+    h3.sub {
+        position: relative;
+        text-align: left;
+        font-family: TurnerBold;
+        font-size: 2rem;
+    }
+    
+    h3.sub span {
+        background: #fff;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    h3.sub:before {
+        background: #696969;
+        content: "";
+        display: block;
+        height: 3px;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        left: 0;
+    }
+    
+    h3.faq-header {
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-top: 2px dotted #b0b0b0;
+        border-bottom: 2px dotted #b0b0b0;
+        padding: 10px 0;
+    }
+    
+    .r-button {
+        padding: 2px 5px;
+        border: 1px solid #0052e7;
+        border-radius: 3px;
+        
+        text-decoration: none;
+        font-size: .975rem !important;
+        font-family: TurnerBold, Arial, Helvetica, sans-serif;
+    }
+    
+    .r-button:hover {
+        background-color: #0052e7;
+        color: #fff;
+    }
+    
+    .r-button-big {
+        color: #000;
+        font-family: TurnerBold;
+        font-size: .975rem;
+        text-decoration: none;
+        padding: 10px;
+        margin: 1px;
+        border: 1px solid #0052e7;
+        border-radius: 7px;
+        display: block;
+        max-width: 35%;
+        min-width: 35%;
+        line-height: 100%;
+    }
+    
+    .r-button-big:hover {
+        background: #0052e7;
+        color: #fff;
+    }
+    
+    .highlight-box {
+        background: #a9a9a9;
+        color: #000;
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .highlight-box > img {
+        margin-right: 10px;
+    }
+    
+    .highlight-box .warning {
+        line-height: 64px;
+        font-size: 1.5rem;
+        font-family: TurnerBold;
+        color: #fff;
+    }
+    
+    .highlight-box p {
+        padding-left: 55px;
+        font-size: 1.3rem;
+        color: #fff;
+        line-height: 130%;
+    }
+    
+    .highlight-box a {
+        font-family: TurnerBold;
+        color: #fff;
+    }
+    
+    .faq {
+        background: #f5f5f5;
+        border: 1px solid #888;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    .faq a {
+        font-size: .975rem;
+        color: #0052e7;
+        font-family: TurnerBold;
+    }
+    
+    
+/*NAVIGATION*/
+
+    .learnNow a {
+        font-size: 15px;
+        font-family: TurnerBold;
+        color: #000;
+    }
+    
+    .learnNow a:hover {color: #0052e7;}
+
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 15px !important;
+      font-family: TurnerBold;
+    }
+
+    .topnav a:hover {
+      background-color: #0052e7;
+      color: #fff;
+    }
+
+    .topnav .icon {display: none;}
+    
+/*MEDIA QUERIES*/
+
+    @media screen and (max-width: 1152px) {
+        .topnav a:not(:first-child) {display: none;}
+        .topnav a.icon {
+        float: right;
+        display: block;
+        }
+    }
+
+    @media screen and (max-width: 1152px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+        }
+    }
+    
+    @media screen and (max-width: 640px) {
+        .r-button-big {
+        display: block;
+        min-width: 100%;
+        margin-bottom: 5px;
+        }
+    }
+    
+</style>
+
+<!--NAVIGATION-->
+
+<span class="learnNow"><a href="http://recruiting.turner.com">recruiting.turner.com</i></a></span>
+
+    <div class="topnav" id="myTopnav">
+      <a href="http://recruiting.turner.com">Home</a>    
+      <a href="/recruitingturnercom/recruiting--our-approach">Our Approach</a>
+      <a href="/recruitingturnercom/recruiting--process">Process</a>
+      <a href="/recruitingturnercom/recruiting--tools-and-resources">Tools &amp; Resources</a>
+      <a href="/recruitingturnercom/recruiting--student-programs">Student Programs</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="shrinkNav()">&#9776;</a>
+    </div>
+
+    <script>
+    function shrinkNav() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+    </script>
+
+<!--BODY-->
+
+<h2>Student Programs</h2>
+
+<br>
+
+<h5>Page Navigation:</h5>
+<a href="#program-overviews" class="r-button">Program Overviews</a>
+<a href="#faq" class="r-button">FAQ</a>
+<a href="#request-an-intern" class="r-button">Request an Intern</a>
+<a href="#where-we-recruit" class="r-button">Where We Recruit</a>
+<a href="#help" class="r-button">Help</a>
+
+<hr>
+
+<br>
+<br>
+
+<a name="program-overviews"></a>
+<h3 class="sub"><span>Program Overviews</span></h3>
+
+<div class="highlight-box">
+    <img src="https://s3.amazonaws.com/tpd-images/64x64_ICONS_Alert.png">
+    <span class="warning">Things to Remember</span>
+    <br>
+    <p>Internships are based on the semester system, however, scheduling can be flexible for students on different academic calendars.</p>
+    <p>Internships are paid no less than minimum wage per state laws.</p>
+    <p>Participation is targeted to college juniors, seniors, and graduate students who are currently enrolled in school. Recent graduates are eligible to intern up to 6 months immediately following graduation.</p>
+    <p>To apply for an internship, all candidates must apply via <a href="http://www.turnerjobs.com" target="_blank">www.turnerjobs.com</a>.</p>
+</div>
+
+<h3 class="faq-header">Turner Interns</h3>
+<p>The Turner Internship Program is our standard internship program geared toward college students. Internship locations include Atlanta, New York City, Washington, D.C., Los Angeles, and Miami.</p>
+
+<br>
+
+<h3 class="faq-header">Emma Bowen</h3>
+<p>Directed at high school juniors, seniors, and college students, the Emma Bowen program is designed to develop highly motivated, minority youth within the media industry through an 8-week paid summer internship. Departments will host an intern over multiple years to provide cumulative development opportunities.</p>
+
+<br>
+
+<h3 class="faq-headeR">Turner Voices</h3>
+<p>This program offers internships to student members of Turner's corporate responsibility partners. This paid internship targets high school seniors.</p>
+
+<br>
+<br>
+
+<h5>Postgraduate Programs</h5>
+<h3 class="faq-header">Turner Trainee Program (T3)</h3>
+<p>The T3 program is designed for individuals who have a driving desire to succeed in the media industry. Trainees will be selected to receive a hands-on learning experience for 11 months in TBS, TNT, TCM, Cartoon Network, adult swim, Turner Sports, or CNN.com. Jobs are posted on <a href="http://www.turnerjobs.com" target="_blank">www.turnerjobs.com</a> and resumes are required.</p>
+
+<br>
+
+<h3 class="faq-header">NCAA Digital Postgraduate Internships</h3>
+<p>College graduates and postgraduate students can apply for this exclusive on-the-job opportunity with Turner Sports. Candidates can apply on <a href="http://www.turnerjobs.com" target="_blank">www.turnerjobs.com</a> for this 11-month paid internship program (benefits included) that focuses on digital media. Resumes are required.</p>
+
+<br>
+
+<h3 class="faq-header">Turner Studios Apprentice Program</h3>
+<p>College graduates and postgraduate students can apply for this 2-year program geared to grow young talent who have foundational knowledge into strong members of the media industry. The program provides an initial year of in-depth exposure and skills training and a second year of application to refine the craft. Jobs are posted on <a href="http://www.turnerjobs.com" target="_blank">www.turnerjobs.com</a> and resumes are required.</p>
+
+<br>
+
+<h3 class="faq-header">CNN News Assistant / Technical Operations Assistant</h3>
+<p>The News Assistant and Technical Operations Assistant positions are offered at the Atlanta CNN bureau. Both provide hands-on experience and training for entry-level candidates pursuing one of two career goals: technical operations or editorial. Jobs are posted on <a href="http://www.turnerjobs.com" target="_blank">www.turnerjobs.com</a> and resumes are required.</p>
+
+<br>
+<br>
+
+<a name="faq"></a>
+<h3 class="sub"><span>FAQ</span></h3>
+
+<div class="faq">
+    <a href="#faq-intern-request">How do I request an intern?</a><br>
+    <a href="#faq-intern-budget">Can I afford an intern?</a><br>
+    <a href="#faq-intern-deadline">I don't want to miss the deadline! Help!</a><br>
+    <a href="#faq-intern-referral">How do I refer an intern?</a><br>
+    <a href="#faq-intern-return">Can I have the same intern next session?</a><Br>
+    <a href="#faq-intern-gap-employment">Can my intern work in between sessions?</a><br>
+    <a href="#faq-intern-housing">Where will my out of state intern live?</a><br>
+    <a href="#faq-intern-paperwork">My intern wants me to fill out paperwork...</a><br>
+    <a href="#faq-intern-performance">How do I manage my intern?</a><Br>
+    <a href="#faq-intern-purpose">What is the purpose of an internship?</a><br>
+    <a href="#faq-intern-stereotypes">What are some stereotypes to avoid?</a><br>
+</div>
+
+<br>
+<br>
+
+<a name="faq-intern-request"></a>
+<h3 class="faq-header">How do I request an intern?</h3>
+<p>An intern request works just like requesting a full time employee:</p>
+<ol>
+    <li>Contact your HR Business Partner to inquire about getting an intern.</li>
+    <li>Confirm you have the budget &mdash; $3,500 &mdash; with your Finance partner.</li>
+    <li>Using the information provided by your HR Business Partner, submit the ePRF on <a href="http://myhr.turner.com" target="_blank">myHR</a>. CNN: This can only be completed by the Business Administration partner.</li>
+</ol>
+    
+<br>
+    
+<a name="faq-intern-budget"></a>
+<h3 class="faq-header">Can I afford an intern?</h3>
+<p>Think of an intern as a temporary employee. The cost will come from your division's budget. You should allocate $3,500 per intern, per session.</p>
+<p>The Fair Labor Standards Act requires us to pay interns as they're treated as employees providing services to the company.</p>
+<p>All interns are paid minimum wage based on location. If your budget allows, you may pay your intern more. This could be very beneficial if your intern has a competing offer!</p>
+    
+<br>
+    
+<a name="faq-intern-deadline"></a>
+<h3 class="faq-header">I don't want to miss the deadline! Help!</h3>
+<p>Campus recruiters will send out reminders with upcoming deadlines to managers that have previously had interns. If you are a new manager, contact your respective campus recruiter to get on their distribution list, or work with your HR Business Partner.</p>
+<p>In general, you can expect the following timeline:</p>
+
+<ul>
+    <li>Spring Interns (Late January &mdash; Late April): Request in August</li>
+    <li>Summer Interns (Early June &mdash; Early August): Request in October</li>
+    <li>Fall Interns (Early September &mdash; Early December): Request in April</li>
+</ul>
+    
+<br>
+    
+<a name="faq-intern-referral"></a>
+<h3 class="faq-header">How do I refer an intern?</h3>
+<p>Do you know someone from your alma mater that would be a great intern? Or maybe you received a referral from a friend? Follow these steps to refer them:</p>
+    
+<ol>
+    <li>Log into <a href="http://myhr.turner.com" target="_blank">myHR</a></li>
+    <li>Navigate to <i>Time Warner Talent Connect</i></li>
+    <li>Select <i>Refer a Candidate</i></li>
+</ol>
+    
+<p>After you've referred the candidate in the portal, you're welcome to email the campus recruiter as well. Please include the candidate's resume and what roles they've applied for.</p> 
+<p>We do not guarantee an internship for referrals, but will consider them in the process. Our internship program is for rising juniors up to 6 month post-graduation (we allow students to intern the 2 sessions following their graduation).</p>
+    
+<br>
+    
+<a name="faq-intern-return"></a>
+<h3 class="faq-header">Can I have the same intern next session?</h3>
+<p>We love to see interns return! If you think they're doing a stellar job, have a conversation with them to see what their plans are for the following session. Be sure to ask them about their upcoming classes and commitments. Remember: our interns are students first, interns second.</p>
+<p>Interns who have graduated more than 6 months prior to the start of their current internship are not eligible for a second term. However, you may bring them n as a temo or freelancer (budget permitting) if you don't have a corresponding entry-level position for them.</p>
+    
+<br>
+    
+<a name="faq-intern-gap-employment"></a>
+<h3 class="faq-header">Can my intern work in between program sessions?</h3>
+<p>Interns are fantastic, right?</p>
+<p>When requesting an intern, the budget is only for a set duration. If you want your intern to work outside the program dates, confirm with your HR Business Partner and Finance to ensure you have the extra funds.</p>
+    
+<br>
+    
+<a name="faq-intern-housing"></a>
+<h3 class="faq-header">My intern is from out-of-state. Where will they live?</h3>
+<p>Unforuntately, we're unable to provide housing for interns due to the volume and cost. Campus recruiters have a housing guide we share with interns once they are hired. The guide provides resources for students looking to relocate temporarily.</p>
+<p>Many students will look into subleasing a space from a resident of the area.</p>
+<p>Some universities provide temporary housing for the summer.</p>
+<p>An intern should not plan to "make money" during their internship. Most of the money they will make will go to living expenses.</p>
+    
+<br>
+    
+<a name="faq-intern-paperwork"></a>
+<h3 class="faq-header">Am I allowed to fill out intern paperwork?</h3>
+<p>We encourage interns to work with their career centers and academic advisors to receive course credit. Most interns can get between 2&ndash;4 credit hours for their internship to go towards their degree. Some degree programs also require an internship.</p>
+<p>As a manager, we ask that you assist in filling out any paperwork as many of the questions will relate to work the intern will be doing.</p>
+<p>VISAs and work eligibility paperwork may come up as well. It all should be easy to fill out and doesn't need Recruiting/HR approval to complete.</p>
+    
+<br>
+    
+<a name="faq-intern-performance"></a>
+<h3 class="faq-header">Managing an intern</h3>
+<p>Here's what to expect from your intern:</p>
+<ul>
+    <li>Interns are not coffee runners!</li>
+    <li>They should perform high-quality, professional work.</li>
+    <li>They should have a hunger to learn.</li>
+</ul>
+<br>
+<p>What do interns need from you?</p>
+<ul>
+    <li>A valuable experience with real projects and work.</li>
+    <li>Transparency of expectations (hours, deadlines, regular communication, etc.)</li>
+    <li>Access to you as a professional mentor.</li>
+</ul>
+<br>
+<p>We recommend that you meet with your intern on a weekly basis at a minimum. Ask them about their experience and get to know them. Here are some things you can ask:</p>
+<ul>
+    <li>Is the experience shaping up to be what they hoped?</li>
+    <li>Are they too busy? Not busy enough?</li>
+    <li>Is the work matching what they thought they'd be doing? Is it in line with their education and professional goals?</li>
+</ul>
+<p>Encourage your intern to network and shadow. If there is a little downtime, get them connected with colleagues in other departments.</p>
+    
+<br>
+    
+<a name="faq-intern-purpose"></a>
+<h3 class="faq-header">The purpose of an internship</h3>
+<p>The Turner Internship Program is an excellent opportunity for students and new professionals to get "real world" experience working with all divisions within Turner.</p>
+<p>With your help, we strive to create a high-caliber program that will attract top talent from across the world. In doing so, we train and evaluate emerging talent to become our diverse slate of candidates for our entry-level programs.</p>
+<p>While on site, we utilize this talent within our departments while providing an environment in which interns can grow their professional skills and allow them to be creative in their approach leading to further innovation at Turner.</p>
+    
+<br>
+    
+<a name="faq-intern-stereotypes"></a>
+<h3 class="faq-header">Common misconceptions about interns</h3>
+<p>Sometimes it's easy to look at young professionals as a "pair of hands," but that's not what's needed at Turner. Here are some common pesky thoughts you should avoid when planning for and training your intern:</p>
+<ul>
+    <li>"Interns are 'cheap labor'."</li>
+    <li>"I can find 100 other people that would do this for free! Why should I offer an intern more money?"</li>
+    <li>"So-and-so is their supervisor &mdash; I don't have time to talk with an intern."</li>
+    <li>"My intern is <i>my</i> intern! I don't have time for them to participate in programs or shadow other departments."<br><br>
+        Interns can shadow others during their downtime, but our programs are designed to help them develop professional skills and become better employees for you and their next supervisor.</li>
+    <li>"I can get an intern to cover PTO and off-hour shifts until I can hire a new, full-time employee."<br><br>
+        The intern must have a supervisor <b>on site</b> any time they're on the clock, regardless of shift.</li>
+</ul>
+    
+<br>
+<br>
+    
+<a name="request-an-intern"></a>
+<h3 class="sub"><span>Request an intern</span></h3>
+    
+<h3 class="faq-header">Recruiting will need...</h3>
+<ul>
+    <li>A comprehensive, well-developed job description that highlights all of your intern position needs.</li>
+    <li>Timely response to email communication, especially during the posting and selection process.</li>
+    <li>Feedback on your intern's performance &mdash; you'll be asked to complete a brief performance review at the end of each session, per intern.</li>
+</ul>
+    
+<br>
+
+<h3 class="faq-header">You will need...</h3>
+<ul>
+    <li>Budget data (if the intern will not be paid minimum wage in your location).</li>
+    <li>Job posting details.</li>
+    <li>To complete an ePRF to request an intern.</li>
+</ul>
+    
+<br>
+    
+<p>Once you submit the ePRF, it will appear on a report for Recruiting. Your recruiter will add your job to turnerjobs.com. We try to have all jobs posted within 24 hours, but if your job ad isn't all it could be, it could take a little longer. Check out the <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Open-Positions_Creating-a-Job-Ad.pdf" target="_blank">Creating a Job Ad</a> resource for more on that.</p>
+
+<div>
+    <a class="r-button-big" href="https://s3.amazonaws.com/tpd-files/Recruiting/Completing-an-ePRF-interns_v2.pdf" target="_blank">View the step-by-step guide</a>
+</div>
+    
+<br>
+<br>
+
+    
+<a name="where-we-recruit"></a>
+<h3 class="sub"><span>Where we recruit</span></h3>
+    
+<p>Here are the colleges and universities we have strong relations with. Campus visits, information sessions, career fairs, virtual career fairs, on campus interviews, and job postings are just a few of the ways we connect with the schools below on a yearly basis.</p>
+<p>If you're an alum or alumni of any of these schools and might be interested in working a career event with us, please contact the recruiter assigned to the school.</p>
+    
+<br>
+<br>
+    
+<a name="help"></a>
+<h3 class="sub"><span>Help</span></h3>
+    
+<p>Please email <a href="mailto:campus.recruiting@turner.com">campus.recruiting@turner.com</a> with any questions you may have.</p>
+    
+<br>
+<br>

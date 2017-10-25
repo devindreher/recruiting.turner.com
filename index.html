@@ -1,0 +1,246 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<style>
+    
+    .material-icons.md-dark {color: rgba(0,0,0,0.54);}
+    .material-icons.md-dark.md-inactive {color: rgba(0,0,0,0.26);}
+    .material-icons.md-36 {font-size: 36px;}
+    .material-icons.md-48 {font-size: 48px;}
+      
+    *, *:after, *:before {
+	box-sizing: border-box;
+    }
+    
+    
+    h4 {
+        font-family: TurnerBold;
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+    
+    .learn-hero {
+        background: url('https://s3.amazonaws.com/tpd-files/images/recruiting-hero-2.jpg');
+        background-size: cover;
+        position: relative;
+        background-repeat: no-repeat;
+        height: 45vh;
+    }
+    
+    .learn-hero-header {
+        position: absolute;
+        top: 50%;
+        text-align: left;
+        padding-left: 20px;
+        width: 100%;
+        -ms-transform: translate(0,-50%);
+        -webkit-transform: translate(0,-50%);
+        transform: (0, -50%);
+    }
+    
+    .learn-hero-header h1 {
+        color: #fff;
+        font-size: 4rem;
+        line-height: 100% !important;
+    }
+    
+    .more {width: 100%; height: auto; padding: 20px; text-align: center;}
+    
+/*FLEX BOXES*/
+    
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -40px;
+        padding: 0;
+    }
+    
+    ul.list li:before {
+        background-image: none !important;
+    }
+    
+    .list-item {
+        display: flex;
+        flex: 1 0 50%;
+        padding: 0.5em;
+    }
+    
+    .list-item a {
+        display: flex;
+        flex: 1 0 50%;
+        text-decoration: none;
+    }
+    
+    .list-content {
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        width: 100%;
+        border: 1px solid #dedede;
+        border-radius: 5px;
+    }
+    
+    .list-content:hover {
+        box-shadow: 3px 3px 5px #888;
+        transition: .3s;
+    }
+    
+    .list-content p {
+        color: #000;
+        flex: 1 0 auto;
+        font-family: TurnerRegular, Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        margin: .5rem 0 0 0;
+        padding: 0;
+        line-height: 1.2rem;
+    }
+    
+/*NAVIGATION*/
+
+    .learnNow a {
+        font-size: 15px;
+        font-family: TurnerBold;
+        color: #000;
+    }
+    
+    .learnNow a:hover {
+        color: #0052e7;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 15px !important;
+      font-family: TurnerBold;
+    }
+
+    .topnav a:hover {
+      background-color: #0052e7;
+      color: #fff;
+    }
+
+    .topnav .icon {
+      display: none;
+    }
+    
+/*MEDIA QUERIES*/
+
+    @media screen and (max-width: 1152px) {
+        .topnav a:not(:first-child) {display: none;}
+        .topnav a.icon {
+        float: right;
+        display: block;
+        }
+    }
+
+    @media screen and (max-width: 1152px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+        }
+        
+    .learn-hero h3 a {
+        font-size: 1.5em;    
+        }
+    }
+    
+    @media screen and (max-width: 480px) { 
+        .more {visibility: hidden; height: 0;}
+    }
+    
+</style>
+
+<span class="learnNow"><a href="http://recruiting.turner.com">recruiting.turner.com</i></a></span>
+
+    <div class="topnav" id="myTopnav">
+      <a href="http://recruiting.turner.com">Home</a>    
+      <a href="/recruitingturnercom/recruiting--our-approach">Our Approach</a>
+      <a href="/recruitingturnercom/recruiting--process">Process</a>
+      <a href="/recruitingturnercom/recruiting--tools-and-resources">Tools &amp; Resources</a>
+      <a href="/recruitingturnercom/recruiting--student-programs">Student Programs</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="shrinkNav()">&#9776;</a>
+    </div>
+
+    <script>
+    function shrinkNav() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+    </script>
+
+<div class="learn-hero">
+    
+    <div class="learn-hero-header">
+        <h1>We have an opportunity.</h1>
+    </div>
+
+</div>
+
+<br>
+
+<div>
+    <h2>The next person Turner hires might do more than just make a team better.</h2>
+    <p>The next person we hire might bring the next great idea to our company. An idea that leads to a better way of doing things, or leads to a new business, or generates more revenue.</p>
+    <p>Our next unconventional hire might become a brilliant EP, marketing director, or controller.</p>
+    <p>Or be our future CEO.</p>
+    <p>That's a lot of pressure to put on each and every hire, but the stakes for Turner are high. The good news? We're all in this together. <b>And Turner Recruiting is here to help.</b></p>
+</div>
+
+<div class="more">
+    <i class="material-icons md-dark md-inactive md-36">arrow_drop_down_circle</i>
+</div>
+
+    <ul class="list">
+        <li class="list-item">
+            <a href="/recruitingturnercom/recruiting---our-approach">
+            <div class="list-content">
+                <p><b>Our Approach</b></p>
+                <p>Learn about our philosophy, why we're here, and the recruiting team.</p>
+            </div>
+            </a>
+        </li>
+        <li class="list-item">
+            <a href="/recruitingturnercom/recruiting---processes">
+            <div class="list-content">
+                <p><b>Processes</b></p>
+                <p>An A-to-Z guide on recruiting &mdash; from creating a job description to making the offer.</p>
+            </div>
+            </a>
+        </li>
+        <li class="list-item">
+            <a href="/recruitingturnercom/recruiting---tools-and-resources">
+            <div class="list-content">
+                <p><b>Tools &amp; Resources</b></p>
+                <p>A comprehensive list of downloadables to help you in your recruiting efforts.</p>
+            </div>
+            </a>
+        </li>
+        <li class="list-item">
+            <a href="/recruitingturnercom/recruiting---student-programs">
+            <div class="list-content">
+                <p><b>Student Programs</b></p>
+                <p>Information about our internships.</p>
+            </div>
+            </a>
+        </li>
+    </ul>

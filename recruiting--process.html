@@ -1,0 +1,879 @@
+<style>
+    
+    h2 {
+        font-family: TurnerBold;
+        font-size: 3rem;
+        margin-top: 30px;
+    }
+    
+    .gap {
+        height: 45px;
+        display: inline-block;
+    }
+    
+    .step-header {
+        margin: 1em 0 .6em 0;
+        padding: 0 0 0 20px;
+        font-family: TurnerBold;
+        position: relative;
+        font-size: 18px;
+        line-height: 40px;
+    }
+    
+    .step-header:after {
+        background: #dedede;
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        border-radius: 2px;
+    }
+    
+    .r-button {
+        color: #000;
+        font-family: TurnerBold;
+        font-size: .975rem;
+        text-decoration: none;
+        padding: 10px;
+        margin: 1px;
+        border: 1px solid #0052e7;
+        border-radius: 7px;
+        display: inline-block;
+        max-width: 30%;
+        min-width: 30%;
+        line-height: 100%;
+    }
+    
+    .r-button:hover {
+        background: #0052e7;
+        color: #fff;
+    }
+    
+/*ROLE COLUMNS*/
+    
+    .roles {
+        display: flex;
+    }
+    
+    .roles:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .role-left {
+        flex: 1;
+        padding: 10px;
+        background: #000;
+        color: #fff;
+    }
+    
+    .role-left p {
+        font-size: 1rem;
+        color: #fff;
+        padding-left: 20px;
+        line-height: 130%;
+    }
+    
+    .role-right p {
+        font-size: 1rem;
+        color: #000;
+        padding-left: 20px;
+        line-height: 130%;
+    }
+    
+    .role-left > h3, .role-right > h3 {
+        margin: 1em 0 .6em 0;
+        padding: 0 0 0 20px;
+        font-family: TurnerBold;
+        position: relative;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    
+    .role-left > h3:after {
+        background: rgba(255,255,255,0.3);
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        border-radius: 1px;
+    }
+        
+    .role-right > h3:after {
+        background: rgba(255,255,255,0.8);
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        border-radius: 1px;
+    }
+    
+    .role-right {
+        flex: 1;
+        padding: 10px;
+        background: #dedede;
+        color: #000;
+        display: table-cell;
+    }
+    
+/*PROCESS BAR*/
+    
+    .progress-indicator {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex
+    }
+
+    .progress-indicator>li {
+        -ms-flex: 1;
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        flex: 1
+    }
+
+    .progress-indicator {
+        margin: 0 0 1em;
+        padding: 0;
+        font-size: 80%;
+    }
+
+    .progress-indicator>li {
+        list-style: none;
+        text-align: center;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        text-overflow: ellipsis;
+        color: #000;
+        display: block;
+        font-family: TurnerBold;
+    }
+
+        .progress-indicator>li:before {
+            background-image: none !important;
+        }
+
+    .progress-indicator>li:hover {
+        color: #6f6f6f
+    }
+
+    .progress-indicator>li.completed,
+    .progress-indicator>li.completed .bubble {
+        color: #65d074
+    }
+
+    .progress-indicator>li .bubble {
+        border-radius: 1000px;
+        width: 20px;
+        height: 20px;
+        background-color: #ddd;
+        display: block;
+        margin: 0 auto .5em;
+        border-bottom: 1px solid #888
+    }
+
+    .progress-indicator>li .bubble:after,
+    .progress-indicator>li .bubble:before {
+        display: block;
+        position: absolute;
+        top: 9px;
+        width: 100%;
+        height: 3px;
+        content: '';
+        background-color: #bbb
+    }
+
+    .progress-indicator>li.completed .bubble,
+    .progress-indicator>li.completed .bubble:after,
+    .progress-indicator>li.completed .bubble:before {
+        background-color: #000;
+        border-color: #000;
+    }
+
+    .progress-indicator>li .bubble:before {
+        left: 0
+    }
+
+    .progress-indicator>li .bubble:after {
+        right: 0
+    }
+
+    .progress-indicator>li:first-child .bubble:after,
+    .progress-indicator>li:first-child .bubble:before {
+        width: 50%;
+        margin-left: 50%
+    }
+
+    .progress-indicator>li:last-child .bubble:after,
+    .progress-indicator>li:last-child .bubble:before {
+        width: 50%;
+        margin-right: 50%
+    }
+
+    .progress-indicator>li.active,
+    .progress-indicator>li.active .bubble {
+        color: #0052e7
+    }
+
+    .progress-indicator>li.active .bubble,
+    .progress-indicator>li.active .bubble:after,
+    .progress-indicator>li.active .bubble:before {
+        background-color: #0052e7;
+        border-color: #0052e7;
+    }
+
+    .progress-indicator>li a:hover .bubble,
+    .progress-indicator>li a:hover .bubble:after,
+    .progress-indicator>li a:hover .bubble:before {
+        background-color: #5671d0;
+        border-color: #1f306e
+    }
+
+    .progress-indicator>li a:hover .bubble {
+        color: #5671d0
+    }
+
+
+    .progress-indicator.custom-complex {
+        background-color: #f1f1f1;
+        padding: 10px 5px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+    }
+    .progress-indicator.custom-complex > li .bubble {
+        height: 12px;
+        width: 99%;
+        border-radius: 2px;
+    }
+
+        .progress-indicator.custom-complex > li a {
+            font-family: TurnerBold;
+            color: #000;
+            white-space: nowrap;
+        }
+
+        .progress-indicator.custom-complex > li a:hover {
+            color: #0052e7;
+        }
+
+    .progress-indicator.custom-complex > li .bubble:before,
+    .progress-indicator.custom-complex > li .bubble:after {
+        display: none;
+    }
+    
+/*FLEX BOXES*/
+    
+    .tool-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+    }
+
+    .tool-grid a {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 100%;
+      border: 1px solid dimgrey;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #000;
+      padding: .5em;
+      margin: .5em;
+    }
+
+    .tool-grid a:hover {
+      box-shadow: 3px 3px 5px #888;
+      transition: .3s;
+    }
+
+    .tool-grid-cell {
+      display: flex;
+      flex: 1 1 100%;
+      padding: 0 10px 0 0;
+      color: #000;
+      margin-right: 5rem;
+    }
+    
+    .tool-grid-cell img {
+        align-self:center;
+        max-width: 32px;
+        max-height: auto;
+        margin-right: 2px;
+    }
+    
+    .tool-grid-cell span {
+        line-height: 32px;
+        font-family: TurnerBold;
+        font-size: 1rem;
+    }
+
+/*NAVIGATION*/
+
+    .learnNow a {
+        font-size: 15px;
+        font-family: TurnerBold;
+        color: #000;
+    }
+    
+    .learnNow a:hover {color: #0052e7;}
+
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 15px !important;
+      font-family: TurnerBold;
+    }
+
+    .topnav a:hover {
+      background-color: #0052e7;
+      color: #fff;
+    }
+
+    .topnav .icon {display: none;}
+    
+/*MEDIA QUERIES*/
+
+    @media screen and (max-width: 1152px) {
+        .topnav a:not(:first-child) {display: none;}
+        .topnav a.icon {
+        float: right;
+        display: block;
+        }
+    }
+
+    @media screen and (max-width: 1152px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+        }
+    }
+    
+    @media handheld, screen and (max-width:640px) {
+        .progress-indicator>li {
+            font-size: 100% !important;
+            line-height: 105% !important;
+        }
+        .progress-indicator.custom-complex > li.active a, .progress-indicator.custom-complex > li a {
+            font-size: 100%;
+            line-height: 105%;
+        }
+        .r-button {
+            display: block;
+            min-width: 100%;
+            margin-bottom: 5px;
+        }
+        .roles { flex-direction: column; }
+    }
+    
+</style>
+
+<!--NAVIGATION-->
+
+<span class="learnNow"><a href="http://recruiting.turner.com">recruiting.turner.com</i></a></span>
+
+    <div class="topnav" id="myTopnav">
+      <a href="http://recruiting.turner.com">Home</a>    
+      <a href="/recruitingturnercom/recruiting--our-approach">Our Approach</a>
+      <a href="/recruitingturnercom/recruiting--process">Process</a>
+      <a href="/recruitingturnercom/recruiting--tools-and-resources">Tools &amp; Resources</a>
+      <a href="/recruitingturnercom/recruiting--student-programs">Student Programs</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="shrinkNav()">&#9776;</a>
+    </div>
+
+    <script>
+    function shrinkNav() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+    </script>
+
+<h2>Recruiting Process</h2>
+
+<p>The process is pretty simple, but there are some choices along the way that will impact the candidate's experience. As you navigate through these steps, make sure you take a look at the roles and responsibilities to see who is responsible for what.</p>
+<p><b>Click on a step to get started:</b></p>
+
+&nbsp;
+<div>
+    <a class="r-button" href="#open-positions">Open Positions</a>
+    <a class="r-button" href="#kickoff">KickOff</a>
+    <a class="r-button" href="#sourcing">Sourcing</a>
+    <a class="r-button" href="#interviewing">Interviewing</a>
+    <a class="r-button" href="#offers">Offers</a>
+</div>
+
+<span class="gap"></span>
+
+<hr>
+
+<span class="gap"></span>
+
+<!--STEP 1: OPEN POSITIONS-->
+
+<a name="open-positions"></a>
+
+<h3 class="step-header">Step 1: Open Positions</h3>
+<ul class="progress-indicator custom-complex">
+    <li class="active"><span class="bubble"></span>Open Positions</li>
+    <li><span class="bubble"></span><a href="#kickoff">KickOff</a></li>
+    <li><span class="bubble"></span><a href="#sourcing">Sourcing</a></li>
+    <li><span class="bubble"></span><a href="#interviewing">Interviewing</a></li>
+    <li><span class="bubble"></span><a href="#offers">Offers</a></li>
+</ul>
+&nbsp;
+
+<p><b>To open a position for hiring, there is a process that involves looping in those who need to know, those that need to support you, and those who need to approve things.</b></p>
+
+<p>Positions can be open for a variety of reasons &mdash; most notably because someone resigned or you received new headcount. Either way, there are some things to decide and work on.</p>
+
+&nbsp;
+
+<p><b>U.S. Roles &amp; Responsibilities</b></p>
+<div class="roles">
+    <div class="role-left">
+        <h3>You:</h3>
+        <p>Notify your HRG, recruiter, and Business Administration (CNN).</p>
+        <p>Seek approvals to backfill or open.</p>
+        <p>Send a copy of the resignation letter to myHR (if applicable).</p>
+        <p>Work with HR to define the scope of the role.</p>
+        <p>Create a job ad for posting.</p>
+        &nbsp;
+    </div>
+    <div class="role-right">
+        <h3>HR &amp; Recruiting:</h3>
+        <p>Reach out to discuss the role and any candidates already in consideration.</p>
+        <p>Schedule a kickoff meeting, if needed</p>
+        <p>Post the role when ready (certain businesses require business leader approval).</p>
+        &nbsp;
+    </div>
+</div>
+
+<span class="gap"></span>
+
+<p><b>EMEA Roles &amp; Responsibilities</b></p>
+<div class="roles">
+    <div class="role-left">
+        <h3>You:</h3>
+        <p>Notify your HR Business Partner to discuss your recruiting options and seek budget approvals for an open position.</p>
+        <p>Work with your HR Business Partner to define the scope of the role.</p>
+        <p>Create (or update) a job description for the position.</p>
+        &nbsp;
+    </div>
+    <div class="role-right">
+        <h3>HR:</h3>
+        <p>Help you create/update a job description, if needed.</p>
+        <p>Schedule a kickoff meeting, if needed, after the role is approved.</p>
+        <p>Work with you to create a job advert for the role.</p>
+        &nbsp;
+    </div>
+</div>
+
+<span class="gap"></span>
+
+<p><b>Tools</b></p>
+
+<div class="tool-grid">
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/OPEN+POSITIONS+PROCESS.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png">
+            <span>How to get a position created</span>
+        </div>
+    </a>    
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Budgeting-for-Positions_v1.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png">
+            <span>Budget Tips</span>
+        </div>
+    </a>    
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Open-Positions_Creating-a-Job-Ad.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png">
+            <span>Creating a Job Advertisement</span>
+        </div>
+    </a>    
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Completing-an-ePRF_v1.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png">
+            <span>Posting a Job</span>
+        </div>
+    </a>
+</div>
+
+<span class="gap"></span>
+
+<hr>
+
+<span class="gap"></span>
+
+<!--STEP 2: KICKOFF-->
+
+<a name="kickoff"></a>
+
+<h3 class="step-header">Step 2: Kickoff</h3>
+<ul class="progress-indicator custom-complex">
+    <li class="completed"><span class="bubble"></span><a href="#open-positions">Open Positions</a></li>
+    <li class="active"><span class="bubble"></span>KickOff</li>
+    <li><span class="bubble"></span><a href="#sourcing">Sourcing</a></li>
+    <li><span class="bubble"></span><a href="#interviewing">Interviewing</a></li>
+    <li><span class="bubble"></span><a href="#offers">Offers</a></li>
+</ul>
+&nbsp;
+<p><b>A kickoff meeting is the initial get-together with your recruiter you'll partner with to fill the open job you have. These meetings can take many forms &mdash; a quick phone call or email to an hour-long meeting.</b></p>
+
+<p>This point of content is essential to a successful search. Besides getting the usual information about what kind of person you're looking for, we'll also ask for your help. Who better to help us know the super-secret, members-only places where these diamonds in the rough exist. Everyone is a recruiter now, so let us leverage your network.</p>
+
+&nbsp;
+
+<p><b>U.S. Roles &amp; Responsibilities</b></p>
+<div class="roles">
+    <div class="role-left">
+        <h3>You:</h3>
+        <p>Need to know what you need.</p>
+        <p>Talk to HR about your networks.</p>
+        <p>Be ready to participate.</p>
+        <p>Be flexible.</p>
+        &nbsp;
+    </div>
+    <div class="role-right">
+        <h3>HR &amp; Recruiting:</h3>
+        <p>Reaches out to you for the kickoff meeting.</p>
+        <p>Provides recommendations to find people.</p>
+        <p>Provides options on the experience you need.</p>
+        <p>Agrees on expectations.</p>
+        &nbsp;
+    </div>
+</div>
+
+<span class="gap"></span>
+
+<p><b>EMEA Roles &amp; Responsibilities</b></p>
+<div class="roles">
+    <div class="role-left">
+        <h3>You:</h3>
+        <p>Need to know what you need.</p>
+        <p>Talk to HR about your networks.</p>
+        <p>Be ready to participate.</p>
+        <p>Be flexible.</p>
+        &nbsp;
+    </div>
+    <div class="role-right">
+        <h3>HR:</h3>
+        <p>Reaches out to you for the kickoff meeting.</p>
+        <p>Discusses the recruiting timeline and expectations.</p>
+        <p>Provides options on recruitment and selection tools.</p>
+        <p>Provides recommendations to find candidates.</p>
+        &nbsp;
+    </div>
+</div>
+
+<span class="gap"></span>
+
+<p><b>Tools</b></p>
+
+<div class="tool-grid">
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/KICK-OFF-PROCESS.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png">
+            <span>A closer look at the kickoff process</span>
+        </div>
+    </a>    
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Budgeting-for-Positions_v1.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png">
+            <span>Budget Tips</span>
+        </div>
+    </a>    
+</div>
+
+<span class="gap"></span>
+
+<hr>
+
+<span class="gap"></span>
+
+<!--STEP 3: SOURCING-->
+
+<a name="sourcing"></a>
+
+<h3 class="step-header">Step 3: Sourcing</h3>
+<ul class="progress-indicator custom-complex">
+    <li class="completed"><span class="bubble"></span><a href="#open-positions">Open Positions</a></li>
+    <li class="completed"><span class="bubble"></span><a href="#kickoff">KickOff</a></li>
+    <li class="active"><span class="bubble"></span>Sourcing</li>
+    <li><span class="bubble"></span><a href="#interviewing">Interviewing</a></li>
+    <li><span class="bubble"></span><a href="#offers">Offers</a></li>
+</ul>
+&nbsp;
+<p><b>This is the hardest part of the process, but what recruiter like the most &mdash; it's the "hunt."</b></p>
+
+<p>There are lots of things we do to find candidates/ Of course we see who has applied, but there is no "posting and praying" going on here. We leverage our networks (and yours) to share the job, get referrals, and find different candidates.</p>
+
+<p>A lot is revealed in this step. Can we really find who you're looking for? Are they in your price range? Are they in the right city? These things will affect the search dramatically, so communication is critical!</p>
+
+&nbsp;
+
+<p><b>U.S. Roles &amp; Responsibilities</b></p>
+
+<div class="roles">
+    <div class="role-left">
+        <h3>You:</h3>
+        <p>Share your memberships (in case we can post there).</p>
+        <p>Share the web link to the job posting.</p>
+        <p>Send any referrals you receive.</p>
+        <p>Share any leads.</p>
+        <p>Don't "talent clone" &mdash; choose different.</p>
+        &nbsp;
+    </div>
+    <div class="role-right">
+        <h3>HR &amp; Recruiting:</h3>
+        <p>Posts the job on external web sites as needed.</p>
+        <p>Shares the posting with our network.</p>
+        <p>Actively sources candidates.</p>
+        <p>Screens candidates and provides you with a selection.</p>
+        &nbsp;
+    </div>
+</div>
+
+<span class="gap"></span>
+
+<p><b>EMEA Roles &amp; Responsibilities</b></p>
+<div class="roles">
+    <div class="role-left">
+        <h3>You:</h3>
+        <p>Share the job advert link to your LinkedIn groups.</p>
+        <p>Send any referrals you receive.</p>
+        <p>Share any leads.</p>
+        &nbsp;
+    </div>
+    <div class="role-right">
+        <h3>HR:</h3>
+        <p>Posts the job on external web sites as needed.</p>
+        <p>Shares the posting with our network.</p>
+        <p>Actively sources candidates.</p>
+        <p>Screens candidates and provides you with a selection.</p>
+        &nbsp;
+    </div>
+</div>
+
+<span class="gap"></span>
+
+<p><b>Tools</b></p>
+
+<div class="tool-grid">
+    <a href="/recruitingturnercom/recruiting--internal-candidates" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png">
+            <span>Working with internal candidates</span>
+        </div>
+    </a>    
+    <a href="/recruitingturnercom/recruiting--passive-candidates" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png">
+            <span>Working with passive candidates</span>
+        </div>
+    </a>
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Sourcing-Process_v1.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/book-ico.png">
+            <span>A closer look at the sourcing process</span>
+        </div>
+    </a>
+    <a href="/recruitingturnercom/recruiting--where-we-source">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/book-ico.png">
+            <span>Where we source</span>
+        </div>
+    </a>
+</div>
+
+<span class="gap"></span>
+
+<hr>
+
+<span class="gap"></span>
+
+<!--STEP 4: INTERVIEWING-->
+
+<a name="interviewing"></a>
+
+<h3 class="step-header">Step 4: Interviewing</h3>
+<ul class="progress-indicator custom-complex">
+    <li class="completed"><span class="bubble"></span><a href="#open-positions">Open Positions</a></li>
+    <li class="completed"><span class="bubble"></span><a href="#kickoff">KickOff</a></li>
+    <li class="completed"><span class="bubble"></span><a href="#sourcing">Sourcing</a></li>
+    <li class="active"><span class="bubble"></span>Interviewing</li>
+    <li><span class="bubble"></span><a href="#offers">Offers</a></li>
+</ul>
+&nbsp;
+<p><b>This is sometimes the longest part of the entire process. That's understandable &mdash; you're making a decision to have someone join your team and no matter how thorough you are, an interview only gets you a glimpse into the candidate.</b></p>
+
+<p>Our advice: make the best decision with the information you have. If you've done your best in the process, it'll yeild the best result. You can do this by preparing for each interview.
+
+&nbsp;
+
+<p><b>U.S. Roles &amp; Responsibilities</b></p>
+
+<div class="roles">
+    <div class="role-left">
+        <h3>You:</h3>
+        <p>Schedule interviews.</p>
+        <p>Select interviewers.</p>
+        <p>Prepare for interviews.</p>
+        <p>Provide timely feedback about each candidate.</p>
+        &nbsp;
+    </div>
+    <div class="role-right">
+        <h3>HR &amp; Recruiting:</h3>
+        <p>Helps you keep the candidates engaged.</p>
+        <p>Follows-up to get feedback on candidates.</p>
+        <p>Sources more candidates if necessary.</p>
+        &nbsp;
+    </div>
+</div>
+
+<span class="gap"></span>
+
+<p><b>EMEA Roles &amp; Responsibilities</b></p>
+<div class="roles">
+    <div class="role-left">
+        <h3>You:</h3>
+        <p>Share the job advert link to your LinkedIn groups.</p>
+        <p>Send any referrals you receive.</p>
+        <p>Share any leads.</p>
+        &nbsp;
+    </div>
+    <div class="role-right">
+        <h3>HR:</h3>
+        <p>Provides you with guidance and support to conduct the best interviews possible.</p>
+        <p>Helps you keep the candidates engaged.</p>
+        <p>Follows-up to get feedback on candidates.</p>
+        <p>Sources more candidates if necessary.</p>
+        &nbsp;
+    </div>
+</div>
+
+<span class="gap"></span>
+
+<p><b>Tools</b></p>
+
+<div class="tool-grid">
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Bold-Hiring-Interview-Guide.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png">
+            <span>Our "bold hiring" interview guide</span>
+        </div>
+    </a>    
+    <a href="https://s3.amazonaws.com/tpd-files/Recruiting/Interview-Scheduling_v2.pdf" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/tool-ico.png">
+            <span>How to schedule candidates</span>
+        </div>
+    </a>
+    <a href="https://www.fastcompany.com/3036627/strong-female-lead/youre-more-biased-than-you-think" target="_blank">
+        <div class="tool-grid-cell">
+            <img src="https://s3.amazonaws.com/tpd-files/images/book-ico.png">
+            <span>Unconscious bias: food for thought</span>
+        </div>
+    </a>
+</div>
+
+<span class="gap"></span>
+
+<hr>
+
+<span class="gap"></span>
+
+<!--OFFERS-->
+
+<a name="offers"></a>
+
+<h3 class="step-header">Step 5: Offers</h3>
+<ul class="progress-indicator custom-complex">
+    <li class="completed"><span class="bubble"></span><a href="#open-positions">Open Positions</a></li>
+    <li class="completed"><span class="bubble"></span><a href="#kickoff">KickOff</a></li>
+    <li class="completed"><span class="bubble"></span><a href="#sourcing">Sourcing</a></li>
+    <li class="completed"><span class="bubble"></span><a href="#interviewing">Interviewing</a></li>
+    <li class="active"><span class="bubble"></span>Offers</li>
+</ul>
+&nbsp;
+
+<p><b>You've found the candidate you think is going to be the best fit for your team. To get them locked in and started, we first need to make a fair offer.</b></p>
+
+<p>Your offer should be the best you can do the first time. Nothing feels worse to a candidate than feeling like you had to fight for what you thought was deserved in the first place.</p>
+
+&nbsp;
+
+<p><b>U.S. Roles &amp; Responsibilities</b></p>
+
+<div class="roles">
+    <div class="role-left">
+        <h3>You:</h3>
+        <p>Work with HR and your recruiter to create an offer.</p>
+        <p>Make the offer (if the candidate is internal).</p>
+        &nbsp;
+    </div>
+    <div class="role-right">
+        <h3>HR &amp; Recruiting:</h3>
+        <p>Helps you create the best offer.</p>
+        <p>Initiates the application and background check.</p>
+        <p>Discusses any issues with you and your HR Business Partner.</p>
+        <p>Keeps the candidate informed.</p>
+        <p>Makes the offer (if the candidate is external).</p>
+        <p>Closes the posting and initiates the onboarding process.</p>
+        &nbsp;
+    </div>
+</div>
+
+<span class="gap"></span>
+
+<p><b>EMEA Roles &amp; Responsibilities</b></p>
+<div class="roles">
+    <div class="role-left">
+        <h3>You:</h3>
+        <p>Work with your HR Business Partner and your recruiter to create an offer.</p>
+        <p>Make the offer (if the candidate is internal).</p>
+        <p>Give any feedback to any unsuccessful internal candidate.</p>
+        &nbsp;
+    </div>
+    <div class="role-right">
+        <h3>HR:</h3>
+        <p>Helps you create the best offer.</p>
+        <p>Discusses any issues with you.</p>
+        <p>Keeps the candidate informed.</p>
+        <p>Makes the offer (if the candidate is external).</p>
+        <p>Closes the posting and initiates the onboarding process.</p>
+        &nbsp;
+    </div>
+</div>
+
+<span class="gap"></span>
